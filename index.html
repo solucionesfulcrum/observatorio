@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatorio de Adherencia a GPC — IETSI · EsSalud</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #F0F4F8;
+            color: #1A2B3C;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+        .hdr {
+            background: #005fa3;
+            padding: 8px 32px;
+            height: 84px;
+            /* 56px * 1.5 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .hdr-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .hdr-logos {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lg-es {
+            background: #0077C8;
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-size: 22px;
+            /* ~100% bigger */
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+
+        .lg-it {
+            background: #0077C8;
+            /* mismo color del header */
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            border: 0.5px solid #0077C8;
+            letter-spacing: 0.3px;
+        }
+
+        .hdr-logo-img {
+            height: 41px;
+            width: auto;
+            display: block;
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .hdr-logo-essalud {
+            background: #005fa3;
+        }
+
+        .hdr-logo-ietsi {
+            background: #005fa3;
+            transform: scaleX(1.15);
+            transform-origin: left center;
+            margin-right: 14px;
+        }
+
+        .lg-sep {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 14px;
+        }
+
+        .hdr-tit {
+            font-size: 19px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .hdr-sub {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 2px;
+        }
+
+        .hdr-meta {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 4px;
+            letter-spacing: 0.04em;
+        }
+
+        /* HERO */
+        .hero {
+            background: #fff;
+            padding: 24px 32px 28px;
+            border: 1px solid #D4E5F4;
+            border-radius: 18px;
+            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            width: 100%;
+            max-width: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hero-panel {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #fff;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 28px rgba(0, 95, 163, 0.16);
+            flex-shrink: 0;
+        }
+
+        .hero-icon .ti {
+            font-size: 28px;
+            color: #0077C8;
+        }
+
+        .hero-copy {
+            min-width: 0;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0F172A;
+            line-height: 1.4;
+            max-width: 560px;
+        }
+
+        .hero-sub {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+            max-width: 520px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 14px;
+            flex-shrink: 0;
+            margin-top: 0;
+            margin-left: auto;
+        }
+
+        .hstat {
+            background: #0077C8;
+            border-radius: 16px;
+            padding: 18px 22px;
+            text-align: left;
+            min-width: 190px;
+            color: #fff;
+            box-shadow: 0 12px 32px rgba(0, 95, 163, 0.12);
+        }
+
+        .hstat-ico {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.14);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .hstat-ico .ti {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .hstat-v {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .hstat-l {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.92);
+            margin-top: 8px;
+            line-height: 1.5;
+            white-space: normal;
+            word-break: break-word;
+        }
+
+        /* MAIN */
+        .main {
+            padding: 24px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* TOOLBAR */
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 18px;
+            align-items: center;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding: 0 32px;
+            box-sizing: border-box;
+        }
+
+        .sw {
+            flex: 4;
+            position: relative;
+            min-width: 0;
+        }
+
+        .sw .ti {
+            position: absolute;
+            left: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 15px;
+            color: #6B7A8D;
+            pointer-events: none;
+        }
+
+        .sw input {
+            width: 100%;
+            padding: 0 12px 0 34px;
+            font-size: 13px;
+            border-radius: 8px;
+            border: 0.5px solid #C8D3DF;
+            background: #fff;
+            height: 38px;
+            color: #1A2B3C;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.15s;
+        }
+
+        .sw input:focus {
+            border-color: #0077C8;
+            box-shadow: 0 0 0 3px rgba(0, 119, 200, 0.12);
+        }
+
+        .sf {
+            font-size: 12px;
+            height: 38px;
+            padding: 0 12px;
+            border-radius: 8px;
+            border: 0.5px solid #C8D3DF;
+            background: #fff;
+            color: #1A2B3C;
+            cursor: pointer;
+            outline: none;
+            font-family: inherit;
+            flex: 2;
+            /* occupies 2 parts out of 8 */
+            min-width: 120px;
+        }
+
+        .toolbar-space {
+            flex: 2;
+        }
+
+        .sf:focus {
+            border-color: #0077C8;
+        }
+
+        /* SECTION LABEL */
+        .slbl {
+            font-size: 11px;
+            font-weight: 600;
+            color: #6B7A8D;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            text-align: left;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            padding: 0 32px;
+            box-sizing: border-box;
+        }
+
+        /* GRID */
+        .ggrid {
+            display: grid;
+            grid-template-columns: repeat(3, 330px);
+            gap: 16px;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            padding: 0 32px;
+            box-sizing: border-box;
+            max-width: none;
+            justify-content: start;
+            align-items: stretch;
+        }
+
+        /* CARD */
+        .gc {
+            width: 100%;
+            background: #fff;
+            border: 0.5px solid #D0D8E4;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            display: flex;
+            flex-direction: column;
+            min-height: 170px;
+        }
+
+        .gc:hover {
+            border-color: #0077C8;
+            box-shadow: 0 2px 8px rgba(0, 119, 200, 0.1);
+        }
+
+        .gc-accent {
+            height: 3px;
+            flex-shrink: 0;
+        }
+
+        .gc-body {
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            flex: 1;
+        }
+
+        .gc-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .gc-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .gc-icon .ti {
+            font-size: 17px;
+        }
+
+        .gc-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+        }
+
+        .gc-state {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .gc-state .ti {
+            font-size: 10px;
+        }
+
+        .gc-tags {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .gc-data {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gc-data .gc-mi {
+            font-size: 10px;
+            color: #6B7A8D;
+        }
+
+        .s-disp {
+            background: #E6F1FB;
+            color: #0C447C;
+        }
+
+        .s-prox {
+            background: #F1EFE8;
+            color: #5F5E5A;
+        }
+
+        .gc-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1A2B3C;
+            line-height: 1.45;
+            flex: 1;
+        }
+
+        .gc-badge {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .gc-foot {
+            border-top: 0.5px solid #EDF0F4;
+            padding: 9px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gc-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .gc-mi {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            color: #6B7A8D;
+        }
+
+        .gc-mi .ti {
+            font-size: 11px;
+            color: #3DB7E4;
+        }
+
+        .btn-v {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 0.5px solid #0077C8;
+            color: #0077C8;
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.12s;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .btn-v,
+        .btn-dis {
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .btn-v:hover {
+            background: #E6F1FB;
+        }
+
+        .btn-v .ti {
+            font-size: 11px;
+        }
+
+        .btn-dis {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+            border-color: #C8D3DF;
+            color: #6B7A8D;
+        }
+
+        /* COLOR VARIANTS */
+        .ic-ped {
+            background: #E6F1FB;
+        }
+
+        .ic-ped .ti,
+        .ic-ped svg {
+            color: #0077C8;
+        }
+
+        .ic-obs {
+            background: #FBEAF0;
+        }
+
+        .ic-obs .ti {
+            color: #D4537E;
+        }
+
+        .ic-med {
+            background: #E1F5EE;
+        }
+
+        .ic-med .ti {
+            color: #00A79C;
+        }
+
+        .ic-cir {
+            background: #EBF4FD;
+        }
+
+        .ic-cir .ti {
+            color: #378ADD;
+        }
+
+        .ic-eme {
+            background: #FAEEDA;
+        }
+
+        .ic-eme .ti {
+            color: #BA7517;
+        }
+
+        .ic-sal {
+            background: #EEEDFE;
+        }
+
+        .ic-sal .ti {
+            color: #534AB7;
+        }
+
+        .b-ped {
+            background: #E6F1FB;
+            color: #0077C8;
+        }
+
+        .b-obs {
+            background: #FBEAF0;
+            color: #D4537E;
+        }
+
+        .b-med {
+            background: #E1F5EE;
+            color: #00A79C;
+        }
+
+        .b-cir {
+            background: #EBF4FD;
+            color: #378ADD;
+        }
+
+        .b-eme {
+            background: #FAEEDA;
+            color: #BA7517;
+        }
+
+        .b-sal {
+            background: #EEEDFE;
+            color: #534AB7;
+        }
+
+        /* EMPTY */
+        .empty {
+            background: #fff;
+            border: 0.5px solid #D0D8E4;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            color: #6B7A8D;
+            font-size: 13px;
+            display: none;
+        }
+
+        /* FOOTER */
+        .ftr {
+            background: #fff;
+            border-top: 0.5px solid #D0D8E4;
+            padding: 14px 32px;
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .ftr-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ftr-brand {
+            font-size: 11px;
+            color: #6B7A8D;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ftr-brand .ti {
+            font-size: 13px;
+        }
+
+        .ftr-ver {
+            font-size: 11px;
+            color: #6B7A8D;
+        }
+
+        .ftr-disc {
+            font-size: 11px;
+            color: #888780;
+            line-height: 1.6;
+            padding-top: 8px;
+            border-top: 0.5px solid #EDF0F4;
+        }
+
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 12px;
+            width: 580px;
+            max-width: 95vw;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-hdr {
+            background: #0077C8;
+            padding: 14px 18px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .modal-hdr-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .modal-badge {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .modal-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .modal-hdr-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .btn-ficha {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #fff;
+            background: transparent;
+            cursor: pointer;
+            font-family: inherit;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .btn-ficha:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            background: transparent;
+            cursor: pointer;
+            font-size: 15px;
+            flex-shrink: 0;
+            font-family: inherit;
+        }
+
+        .btn-close:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .modal-meta {
+            padding: 9px 18px;
+            border-bottom: 1px solid #EDF0F4;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #F8FAFB;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        .modal-mi {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: #6B7A8D;
+        }
+
+        .modal-mi .ti {
+            font-size: 12px;
+            color: #3DB7E4;
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            flex: 1;
+            padding: 12px 18px;
+        }
+
+        /* ACORDEÓN DE INDICADORES */
+        .ind-acc {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .ind-item {
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.15s;
+        }
+
+        .ind-item.active {
+            border-color: #0077C8;
+        }
+
+        .ind-item-dis {
+            opacity: 0.45;
+        }
+
+        .ind-item-hdr {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            cursor: pointer;
+            background: #fff;
+            transition: background 0.12s;
+            user-select: none;
+        }
+
+        .ind-item-hdr:hover {
+            background: #F8FAFB;
+        }
+
+        .ind-item-dis .ind-item-hdr {
+            cursor: default;
+        }
+
+        .ind-item-dis .ind-item-hdr:hover {
+            background: #fff;
+        }
+
+        .ind-code {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 4px;
+            background: #F0F4F8;
+            color: #5F5E5A;
+            border: 1px solid #D0D8E4;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .ind-short {
+            font-size: 12px;
+            font-weight: 500;
+            color: #1A2B3C;
+            flex: 1;
+            line-height: 1.3;
+        }
+
+        .ind-item-dis .ind-short {
+            color: #888780;
+        }
+
+        .ind-chevron {
+            font-size: 13px;
+            color: #6B7A8D;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .ind-item.active .ind-chevron {
+            transform: rotate(180deg);
+        }
+
+        .tag-sin {
+            font-size: 10px;
+            color: #888780;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-weight: 500;
+        }
+
+        .ind-item-body {
+            display: none;
+            padding: 12px 14px;
+            border-top: 1px solid #EDF0F4;
+            background: #FAFBFC;
+        }
+
+        .ind-item.active .ind-item-body {
+            display: block;
+        }
+
+        .ind-nombre-completo {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1A2B3C;
+            line-height: 1.55;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #EDF0F4;
+        }
+
+        .ind-item-dis .ind-nombre-completo {
+            color: #888780;
+        }
+
+        .ind-foot {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ind-meta-wrap {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .ind-meta-lbl {
+            font-size: 10px;
+            color: #6B7A8D;
+        }
+
+        .ind-meta-val {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1A2B3C;
+        }
+
+        .sem-wrap {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .sem-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .sem-ok {
+            background: #1D9E75;
+        }
+
+        .sem-low {
+            background: #E24B4A;
+        }
+
+        .sem-na {
+            background: #D0D8E4;
+        }
+
+        .sem-lbl {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .sem-lbl-ok {
+            color: #0F6E56;
+        }
+
+        .sem-lbl-low {
+            color: #A32D2D;
+        }
+
+        .sem-lbl-na {
+            color: #888780;
+        }
+
+        .btn-tb {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #0077C8;
+            color: #0077C8;
+            background: #fff;
+            cursor: pointer;
+            font-family: inherit;
+            line-height: 1.4;
+            margin-left: auto;
+        }
+
+        .btn-tb:hover {
+            background: #E6F1FB;
+        }
+
+        .btn-tb-dis {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+            border-color: #D0D8E4 !important;
+            color: #6B7A8D !important;
+        }
+
+        .modal-footer {
+            padding: 10px 18px;
+            border-top: 1px solid #EDF0F4;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #F8FAFB;
+            flex-shrink: 0;
+        }
+
+        .ley-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            color: #6B7A8D;
+        }
+
+        .ley-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .ggrid {
+                grid-template-columns: repeat(3, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .ggrid {
+                grid-template-columns: repeat(2, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ggrid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .observatorio-hero {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7fafc;
+            overflow: hidden;
+        }
+
+        /* Aumentar 50% el tamaño del H2 dentro del hero específico */
+        .observatorio-hero .hero-text h2 {
+            font-size: 15.75px;
+        }
+
+        /* Aumentar 50% el tamaño del párrafo dentro del hero específico */
+        .observatorio-hero .hero-text p {
+            font-size: 13.5px;
+        }
+
+        .hero-header {
+            background: #0a6fb7;
+            color: #ffffff;
+            padding: 21px 34px;
+            display: flex;
+            align-items: center;
+            gap: 19px;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo {
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 14px 22px;
+            font-size: 25px;
+            line-height: 1;
+        }
+
+        .essalud {
+            background: #087fc7;
+            color: #ffffff;
+        }
+
+        .ietsi {
+            background: #0a6fb7;
+            color: #ffffff;
+        }
+
+        .divider {
+            width: 1px;
+            height: 51px;
+            background: rgba(255, 255, 255, 0.45);
+        }
+
+        .hero-title h1 {
+            margin: 0 0 6px;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .hero-title p {
+            margin: 0 0 6px;
+            font-size: 17px;
+        }
+
+        .hero-title span {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-content {
+            background: #eef7fd;
+            padding: 24px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 19px;
+        }
+
+        .hero-text {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .icon-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #d6ebfb;
+            color: #0078c8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .main-icon {
+            width: 35px;
+            height: 35px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 3.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hero-text h2 {
+            margin: 0 0 14px;
+            color: #005a96;
+            font-size: 10.5px;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            margin: 0;
+            color: #34495e;
+            font-size: 9px;
+            line-height: 1.5;
+        }
+
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background: #0078c8;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .kpi-group {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .kpi-card {
+            width: 120px;
+            min-height: 75px;
+            background: #0078c8;
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 12px 11px;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(0, 90, 150, 0.25);
+        }
+
+        .kpi-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .kpi-icon {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.72);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .kpi-icon rect {
+            fill: rgba(255, 255, 255, 0.55);
+            stroke: none;
+        }
+
+        .kpi-divider {
+            width: 1px;
+            height: 26px;
+            background: rgba(255, 255, 255, 0.45);
+        }
+
+        .kpi-card strong {
+            font-size: 31px;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .kpi-card span {
+            display: block;
+            font-size: 8.5px;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 992px) {
+
+            .hero-header,
+            .hero-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .kpi-group {
+                width: 100%;
+            }
+
+            .kpi-card {
+                flex: 1;
+                width: auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="hdr">
+        <div class="hdr-brand">
+            <div class="hdr-logos">
+                <img src="essalud.webp" alt="EsSalud" class="hdr-logo-img hdr-logo-essalud" />
+                <span class="lg-sep">·</span>
+                <img src="IETSI.webp" alt="IETSI" class="hdr-logo-img hdr-logo-ietsi" />
+            </div>
+            <div>
+                <div class="hdr-tit">Observatorio de Adherencia a Guías de Práctica Clínica</div>
+                <div class="hdr-sub">Instituto de Evaluación de Tecnologías en Salud e Investigación</div>
+                <div class="hdr-meta">Dirección de Guías de Práctica Clínica, Farmacovigilancia y Tecnovigilancia</div>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="observatorio-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 64 64" class="main-icon">
+                        <line x1="14" y1="50" x2="14" y2="34"></line>
+                        <line x1="26" y1="50" x2="26" y2="26"></line>
+                        <line x1="38" y1="50" x2="38" y2="32"></line>
+                        <line x1="50" y1="50" x2="50" y2="22"></line>
+                        <polyline points="14,26 26,16 38,24 50,12"></polyline>
+                        <circle cx="14" cy="26" r="3"></circle>
+                        <circle cx="26" cy="16" r="3"></circle>
+                        <circle cx="38" cy="24" r="3"></circle>
+                        <circle cx="50" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+
+                <div>
+                    <h2>
+                        Resultados de la medición de indicadores de adherencia a las recomendaciones trazadoras de las
+                        GPC aprobadas
+                        por el IETSI.
+                    </h2>
+
+                    <p>
+                        <span class="info-icon">i</span>
+                        Información para el seguimiento y mejora de la práctica clínica en EsSalud.
+                    </p>
+                </div>
+            </div>
+
+            <div class="kpi-group">
+                <div class="kpi-card">
+                    <div class="kpi-content">
+                        <svg viewBox="0 0 64 64" class="kpi-icon">
+                            <path d="M18 10h22l10 10v34H18z"></path>
+                            <path d="M40 10v12h10"></path>
+                            <line x1="25" y1="32" x2="43" y2="32"></line>
+                            <line x1="25" y1="40" x2="43" y2="40"></line>
+                        </svg>
+                        <div class="kpi-divider"></div>
+                        <strong>2</strong>
+                    </div>
+                    <span>GPC con resultados<br>disponibles</span>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-content">
+                        <svg viewBox="0 0 64 64" class="kpi-icon">
+                            <rect x="14" y="34" width="8" height="18"></rect>
+                            <rect x="28" y="24" width="8" height="28"></rect>
+                            <rect x="42" y="38" width="8" height="14"></rect>
+                        </svg>
+                        <div class="kpi-divider"></div>
+                        <strong>4</strong>
+                    </div>
+                    <span>indicadores<br>medidos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main">
+        <div class="toolbar">
+            <div class="sw">
+                <i class="ti ti-search"></i>
+                <input type="text" id="obs-q"
+                    placeholder="Buscar por cualquier palabra: condición, especialidad, nombre de guía…"
+                    oninput="filtrar()" />
+            </div>
+            <select class="sf" id="obs-esp" onchange="filtrar()">
+                <option value="">Todas las especialidades</option>
+                <option value="Pediatría">Pediatría</option>
+                <option value="Obstetricia">Obstetricia y ginecología</option>
+                <option value="Medicina interna">Medicina interna y especialidades médicas</option>
+                <option value="Cirugía">Cirugía y especialidades quirúrgicas</option>
+                <option value="Emergencia">Emergencia y cuidados críticos</option>
+                <option value="Salud mental">Salud mental y neurología</option>
+            </select>
+            <div class="toolbar-space"></div>
+        </div>
+
+        <div class="slbl" id="slbl">Guías con resultados disponibles · 1 guía</div>
+
+        <div class="ggrid" id="ggrid">
+
+            <div class="gc"
+                data-txt="neumonía adquirida comunidad población pediátrica pediatría infectología nac neumonia respiratoria pulmon"
+                data-esp="Pediatría">
+                <div class="gc-accent" style="background:#0077C8"></div>
+                <div class="gc-body">
+                    <div class="gc-top">
+                        <div class="gc-icon ic-ped"><i class="ti ti-lungs"></i></div>
+                        <span class="gc-state s-disp"><i class="ti ti-circle-check"></i>Disponible</span>
+                    </div>
+                    <div class="gc-tags">
+                        <span class="gc-badge b-ped">Pediatría · Infectología</span>
+                    </div>
+                    <div class="gc-name">Neumonía adquirida en la comunidad en población pediátrica</div>
+                    <div class="gc-data">
+                        <div class="gc-mi"><i class="ti ti-chart-bar"></i>3 indicadores medidos</div>
+                        <div class="gc-mi"><i class="ti ti-check"></i>4 aprobados</div>
+                    </div>
+                </div>
+                <div class="gc-foot">
+                    <div class="gc-meta">
+                        <div class="gc-mi"><i class="ti ti-clock"></i>Ene 2025 – Mar 2026</div>
+                    </div>
+                    <button class="btn-v" type="button" onclick="abrirModalDesdeBoton(event, 'modal-nac')"><i
+                            class="ti ti-arrow-right"></i>Ver indicadores</button>
+                </div>
+            </div>
+
+            <div class="gc"
+                data-txt="diarrea aguda población pediátrica pediatría gastroenterología gastrointestinal niños"
+                data-esp="Pediatría">
+                <div class="gc-accent" style="background:#0077C8"></div>
+                <div class="gc-body">
+                    <div class="gc-top">
+                        <div class="gc-icon ic-ped">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 3C8.5 7.2 6.5 10.4 6.5 13.4a5.5 5.5 0 0 0 11 0C17.5 10.4 15.5 7.2 12 3z">
+                                </path>
+                                <path d="M9.5 14.2h5"></path>
+                                <path d="M12 11.7v5"></path>
+                            </svg>
+                        </div>
+                        <span class="gc-state s-disp"><i class="ti ti-circle-check"></i>Disponible</span>
+                    </div>
+                    <div class="gc-tags">
+                        <span class="gc-badge b-ped">Pediatría · Infectología</span>
+                    </div>
+                    <div class="gc-name">Diarrea o gastroenteritis aguda infecciosa en menores de 5 años</div>
+                    <div class="gc-data">
+                        <div class="gc-mi"><i class="ti ti-chart-bar"></i>Medición en desarrollo</div>
+                        <div class="gc-mi"><i class="ti ti-clock"></i>Pendiente</div>
+                    </div>
+                </div>
+                <div class="gc-foot">
+                    <div class="gc-meta">
+                        <div class="gc-mi"><i class="ti ti-clock"></i>Ene 2026 – Mar 2026</div>
+                    </div>
+                    <button class="btn-v" type="button" onclick="abrirModalDesdeBoton(event, 'modal-diarrea')">
+                        <i class="ti ti-arrow-right"></i>Ver indicadores
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="empty" id="empty">
+            No se encontraron guías que coincidan con la búsqueda.
+        </div>
+    </main>
+
+    <footer class="ftr">
+        <div class="ftr-top">
+            <div class="ftr-brand">
+                <i class="ti ti-report-medical"></i>
+                IETSI · EsSalud · Observatorio de Adherencia a GPC
+            </div>
+            <div class="ftr-ver">© 2026 · v1.0</div>
+        </div>
+        <div class="ftr-disc">
+            Esta plataforma es de uso exclusivo del personal autorizado de EsSalud. La información contenida corresponde
+            a resultados de medición de adherencia a Guías de Práctica Clínica y tiene fines exclusivamente
+            institucionales de gestión y mejora de la calidad asistencial.<p>
+                Dirección de Guías de Práctica Clínica, Farmacovigilancia y Tecnovigilancia — DGPCFyT · IETSI · EsSalud.
+            </p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modal-nac" onclick="cerrarModalOverlay(event, 'modal-nac')">
+        <div class="modal">
+
+            <div class="modal-hdr">
+                <div class="modal-hdr-left">
+                    <span class="modal-badge">Pediatría · Infectología</span>
+                    <div class="modal-title">Neumonía adquirida en la comunidad en población pediátrica</div>
+                </div>
+                <div class="modal-hdr-right">
+                    <button class="btn-ficha"
+                        onclick="event.stopPropagation(); window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2025/11/Resolucion-N%C2%B0-0295-2025-IETSI-_Indicadores-de-la-GCP-NAC-PED.pdf','_blank')">
+                        <i class="ti ti-file-download"></i>Fichas técnicas
+                    </button>
+                    <button class="btn-close" onclick="cerrarModal('modal-nac')">
+                        <i class="ti ti-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-meta">
+                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Res. N° 000294-IETSI-ESSALUD-2025</div>
+                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Indicadores: Res. N°
+                    000295-IETSI-ESSALUD-2025</div>
+                <div class="modal-mi"><i class="ti ti-chart-bar"></i>3 de 4 indicadores medidos</div>
+                <div class="modal-mi"><i class="ti ti-clock"></i>Ene 2025 – Mar 2026</div>
+            </div>
+
+            <div class="modal-body">
+                <div class="ind-acc">
+
+                    <!-- IND-01 -->
+                    <div class="ind-item" id="ind-01">
+                        <div class="ind-item-hdr" onclick="toggleInd('ind-01')">
+                            <span class="ind-code">IND-01</span>
+                            <span class="ind-short">Radiografía de tórax en NAC de manejo ambulatorio</span>
+                            <i class="ti ti-chevron-down ind-chevron"></i>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes pediátricos (6 meses a &lt;18 años) con neumonía adquirida en la
+                                comunidad de manejo ambulatorio a quienes se les indicó radiografía de tórax
+                            </div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">Descendente 20 a 30%</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <!-- KEVIN: cambiar sem-ok / sem-low según resultado real -->
+                                    <span class="sem-dot sem-low"></span>
+                                    <span class="sem-lbl sem-lbl-low">No cumple meta</span>
+                                </div>
+                                <!-- KEVIN: reemplazar href con enlace real de Power BI -->
+                                <button class="btn-tb"
+                                    onclick="abrirTableroNuevaPestana(event, 'https://app.powerbi.com/view?r=eyJrIjoiZjJmNGNlYTQtMDhiNy00OTZhLWE5MWYtYmU5MzA5ZWRlYjU0IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', 'IND-01 · Radiografía de tórax en NAC de manejo ambulatorio')">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IND-02 -->
+                    <div class="ind-item" id="ind-02">
+                        <div class="ind-item-hdr" onclick="toggleInd('ind-02')">
+                            <span class="ind-code">IND-02</span>
+                            <span class="ind-short">Prescripción de amoxicilina en NAC de manejo ambulatorio</span>
+                            <i class="ti ti-chevron-down ind-chevron"></i>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes pediátricos (6 meses a &lt;18 años) con neumonía adquirida en la
+                                comunidad de manejo ambulatorio que recibieron prescripción de amoxicilina
+                            </div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">≥ 80%</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <!-- KEVIN: cambiar sem-ok / sem-low según resultado real -->
+                                    <span class="sem-dot sem-low"></span>
+                                    <span class="sem-lbl sem-lbl-low">No cumple meta</span>
+                                </div>
+                                <button class="btn-tb"
+                                    onclick="abrirTableroNuevaPestana(event, 'https://app.powerbi.com/view?r=eyJrIjoiMDE1MGI3MDQtMzBlZC00NDg1LTlhNjgtMjRmNjUyM2I3NzI4IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', 'GUIA NEUMONIA EN PEDIATRICA INDICADOR 2 - V7 - V3 UNIFICADO')">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IND-03 — SIN MEDICIÓN -->
+                    <div class="ind-item ind-item-dis" id="ind-03">
+                        <div class="ind-item-hdr">
+                            <span class="ind-code">IND-03</span>
+                            <span class="ind-short">Dosis y duración de amoxicilina en NAC de manejo ambulatorio</span>
+                            <span class="tag-sin">No medido</span>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes pediátricos (6 meses a &lt;18 años) con neumonía adquirida en la
+                                comunidad de manejo ambulatorio que recibieron una adecuada prescripción de amoxicilina
+                            </div>
+                            <div class="ind-foot">
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-na"></span>
+                                    <span class="sem-lbl sem-lbl-na">No medido — dato no estructurado en ESSI</span>
+                                </div>
+                                <button class="btn-tb btn-tb-dis">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IND-04 -->
+                    <div class="ind-item" id="ind-04">
+                        <div class="ind-item-hdr" onclick="toggleInd('ind-04')">
+                            <span class="ind-code">IND-04</span>
+                            <span class="ind-short">Prescripción de ampicilina / penicilina G en NAC de manejo
+                                hospitalario</span>
+                            <i class="ti ti-chevron-down ind-chevron"></i>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes pediátricos (2 meses a &lt;18 años) hospitalizados con
+                                diagnóstico de neumonía adquirida en la comunidad que recibieron prescripción de
+                                ampicilina o penicilina G sódica
+                            </div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">≥ 80%</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <!-- KEVIN: cambiar sem-ok / sem-low según resultado real -->
+                                    <span class="sem-dot sem-low"></span>
+                                    <span class="sem-lbl sem-lbl-low">No cumple meta</span>
+                                </div>
+                                <button class="btn-tb"
+                                    onclick="abrirTableroNuevaPestana(event, 'https://app.powerbi.com/view?r=eyJrIjoiYjAyZGM5MzgtNzE0Yy00MzhiLWE3ZmMtNDBkZWUwYTI0ZWUyIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', 'GUIA NEUMONIA EN PEDIATRICA INDICADOR 4 - V1 - V2 UNIFICADO')">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="ley-item"><span class="ley-dot" style="background:#1D9E75"></span>Cumple meta</div>
+                <div class="ley-item"><span class="ley-dot" style="background:#E24B4A"></span>No cumple meta</div>
+                <div class="ley-item"><span class="ley-dot" style="background:#D0D8E4"></span>No medido</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal copia para Diarrea / Gastroenteritis (copiado de modal-nac) -->
+    <div class="modal-overlay" id="modal-diarrea" onclick="cerrarModalOverlay(event, 'modal-diarrea')">
+        <div class="modal">
+
+            <div class="modal-hdr">
+                <div class="modal-hdr-left">
+                    <span class="modal-badge">Pediatría · Infectología</span>
+                    <div class="modal-title">Diarrea o gastroenteritis aguda infecciosa en menores de 5 años</div>
+                </div>
+                <div class="modal-hdr-right">
+                    <button class="btn-ficha"
+                        onclick="event.stopPropagation(); window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2025/12/RESOLUCION-000337-IETSI-ESSALUD-2025_Indicadores-de-la-GCP-Diarrea-o-GAI.pdf','_blank')">
+                        <i class="ti ti-file-download"></i>Fichas técnicas
+                    </button>
+                    <button class="btn-close" onclick="cerrarModal('modal-diarrea')">
+                        <i class="ti ti-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-meta">
+                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Res. N° 000309-IETSI-ESSALUD-2025</div>
+                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Indicadores: Res. N°
+                    000337-IETSI-ESSALUD-2025</div>
+                <div class="modal-mi"><i class="ti ti-chart-bar"></i>1 de 4 indicadores medidos</div>
+                <div class="modal-mi"><i class="ti ti-clock"></i>Ene 2026 – Mar 2026</div>
+            </div>
+
+            <div class="modal-body">
+                <div class="ind-acc">
+
+                    <!-- IND-01 (copiado) -->
+                    <div class="ind-item" id="ind-diar-01">
+                        <div class="ind-item-hdr" onclick="toggleInd('ind-diar-01')">
+                            <span class="ind-code">IND-01</span>
+                            <span class="ind-short">Reacción inflamatoria en heces en Diarrea o gastroenteritis
+                                infecciosa.</span>
+                            <i class="ti ti-chevron-down ind-chevron"></i>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes menores de 5 años con diarrea o gastroenteritis
+                                aguda infecciosa que recibieron indicación de reacción inflamatoria en
+                                heces.
+
+                            </div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">= 20</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-low"></span>
+                                    <span class="sem-lbl sem-lbl-low">No cumple meta</span>
+                                </div>
+                                <button class="btn-tb"
+                                    onclick="abrirTableroNuevaPestana(event, 'https://app.powerbi.com/view?r=eyJrIjoiMDkyNTc0OWMtMGJhMi00NTQ2LTk0OTYtNzYxYTRkYzI1M2U1IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', 'IND-01 · Diarrea · Indicador 1')">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IND-02 -->
+                    <div class="ind-item ind-item-dis" id="ind-diar-02">
+                        <div class="ind-item-hdr">
+                            <span class="ind-code">IND-02</span>
+                            <span class="ind-short">Loperamida(TEMPORAL)</span>
+                            <span class="tag-sin">No medido</span>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes menores de 5 años con diarrea o gastroenteritis aguda infecciosa
+                                que recibieron prescripción de loperamida.
+                            </div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">—</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-na"></span>
+                                    <span class="sem-lbl sem-lbl-na">No medido</span>
+                                </div>
+                                <button class="btn-tb btn-tb-dis">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IND-03 — SIN MEDICIÓN -->
+                    <div class="ind-item ind-item-dis" id="ind-diar-03">
+                        <div class="ind-item-hdr">
+                            <span class="ind-code">IND-03</span>
+                            <span class="ind-short">Dimenhidrinato(TEMPORAL)</span>
+                            <span class="tag-sin">No medido</span>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes menores de 5 años con gastroenteritis aguda
+                                infecciosa que recibieron prescripción de dimenhidrinato.
+                            </div>
+                            <div class="ind-foot">
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-na"></span>
+                                    <span class="sem-lbl sem-lbl-na">No medido — dato no estructurado en ESSI</span>
+                                </div>
+                                <button class="btn-tb btn-tb-dis">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IND-04 -->
+                    <div class="ind-item ind-item-dis" id="ind-diar-04">
+                        <div class="ind-item-hdr">
+                            <span class="ind-code">IND-04</span>
+                            <span class="ind-short">Zinc(TEMPORAL)</span>
+                            <span class="tag-sin">No medido</span>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">
+                                Porcentaje de pacientes pediátricos (6 meses a 59 meses) con diarrea o
+                                gastroenteritis aguda infecciosa que recibieron prescripción de sulfato de
+                                zinc.
+                            </div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">—</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-na"></span>
+                                    <span class="sem-lbl sem-lbl-na">No medido</span>
+                                </div>
+                                <button class="btn-tb btn-tb-dis">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="ley-item"><span class="ley-dot" style="background:#1D9E75"></span>Cumple meta</div>
+                <div class="ley-item"><span class="ley-dot" style="background:#E24B4A"></span>No cumple meta</div>
+                <div class="ley-item"><span class="ley-dot" style="background:#D0D8E4"></span>No medido</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // ── MODAL DE INDICADORES ──
+        function abrirModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function abrirModalDesdeBoton(event, id) {
+            event.stopPropagation();
+            abrirModal(id);
+        }
+
+        function cerrarModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+
+            // cerrar todos los indicadores desplegados dentro del modal
+            document.querySelectorAll('.ind-item.active').forEach(function (el) {
+                el.classList.remove('active');
+            });
+        }
+
+        function cerrarModalOverlay(e, id) {
+            if (e.target === document.getElementById(id)) {
+                cerrarModal(id);
+            }
+        }
+
+        // ── ACORDEÓN INTERNO DEL MODAL ──
+        function toggleInd(id) {
+            const item = document.getElementById(id);
+            if (!item || item.classList.contains('ind-item-dis')) return;
+
+            const isOpen = item.classList.contains('active');
+
+            document.querySelectorAll('.ind-item.active').forEach(function (el) {
+                el.classList.remove('active');
+            });
+
+            if (!isOpen) {
+                item.classList.add('active');
+            }
+        }
+
+        // ── TABLERO POWER BI EN NUEVA PESTAÑA CON HEADER Y FOOTER ──
+        function abrirTableroNuevaPestana(event, url, titulo) {
+            event.stopPropagation();
+
+            if (!url || url.startsWith('ENLACE_POWERBI')) {
+                alert('Debe reemplazar el enlace del tablero de Power BI antes de abrirlo.');
+                return;
+            }
+
+            const tableroUrl = 'tablero.html?url=' + encodeURIComponent(url) +
+                '&titulo=' + encodeURIComponent(titulo || 'Tablero del indicador');
+
+            window.open(tableroUrl, '_blank');
+        }
+
+        // ── BUSCADOR Y FILTRO ──
+        function filtrar() {
+            const q = document.getElementById('obs-q').value.toLowerCase();
+            const esp = document.getElementById('obs-esp').value;
+            const cards = document.querySelectorAll('.gc');
+            let vis = 0;
+
+            cards.forEach(function (c) {
+                const txt = (c.dataset.txt || '').toLowerCase();
+                const ce = c.dataset.esp || '';
+                const mq = !q || txt.includes(q);
+                const me = !esp || ce === esp;
+
+                if (mq && me) {
+                    c.style.display = '';
+                    vis++;
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+
+            document.getElementById('slbl').textContent =
+                'Guías con resultados disponibles · ' + vis + (vis === 1 ? ' guía' : ' guías');
+
+            document.getElementById('empty').style.display = vis === 0 ? '' : 'none';
+            document.getElementById('ggrid').style.display = vis === 0 ? 'none' : '';
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.open').forEach(function (modal) {
+                    cerrarModal(modal.id);
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

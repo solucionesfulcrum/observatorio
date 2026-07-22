@@ -582,6 +582,14 @@
             color: #534AB7;
         }
 
+        .ic-dep {
+            background: #FDECEC;
+        }
+
+        .ic-dep .ti {
+            color: #C62828;
+        }
+
         .b-ped {
             background: #E6F1FB;
             color: #0077C8;
@@ -610,6 +618,16 @@
         .b-sal {
             background: #EEEDFE;
             color: #534AB7;
+        }
+
+        .b-dep {
+            background: #FDECEC;
+            color: #C62828;
+        }
+
+        .s-prox-red {
+            background: #FDECEC;
+            color: #C62828;
         }
 
         /* EMPTY */
@@ -1347,7 +1365,7 @@
                             <rect x="42" y="38" width="8" height="14"></rect>
                         </svg>
                         <div class="kpi-divider"></div>
-                        <strong>4</strong>
+                        <strong>7</strong>
                     </div>
                     <span>indicadores<br>medidos</span>
                 </div>
@@ -1375,7 +1393,7 @@
             <div class="toolbar-space"></div>
         </div>
 
-        <div class="slbl" id="slbl">Guías con resultados disponibles · 1 guía</div>
+        <div class="slbl" id="slbl">Guías con resultados disponibles</div>
 
         <div class="ggrid" id="ggrid">
 
@@ -1428,8 +1446,8 @@
                     </div>
                     <div class="gc-name">Diarrea o gastroenteritis aguda infecciosa en menores de 5 años</div>
                     <div class="gc-data">
-                        <div class="gc-mi"><i class="ti ti-chart-bar"></i>Medición en desarrollo</div>
-                        <div class="gc-mi"><i class="ti ti-clock"></i>Pendiente</div>
+                        <div class="gc-mi"><i class="ti ti-chart-bar"></i>4 indicadores medidos</div>
+                        <div class="gc-mi"><i class="ti ti-check"></i>4 aprobados</div>
                     </div>
                 </div>
                 <div class="gc-foot">
@@ -1438,6 +1456,31 @@
                     </div>
                     <button class="btn-v" type="button" onclick="abrirModalDesdeBoton(event, 'modal-diarrea')">
                         <i class="ti ti-arrow-right"></i>Ver indicadores
+                    </button>
+                </div>
+            </div>
+
+            <div class="gc" data-txt="depresión leve salud mental psiquiatría psicología" data-esp="Salud mental">
+                <div class="gc-accent" style="background:#C62828"></div>
+                <div class="gc-body">
+                    <div class="gc-top">
+                        <div class="gc-icon ic-dep"><i class="ti ti-brain"></i></div>
+                        <span class="gc-state s-prox-red"><i class="ti ti-clock"></i>Próximamente</span>
+                    </div>
+                    <div class="gc-tags">
+                        <span class="gc-badge b-dep">Salud mental</span>
+                    </div>
+                    <div class="gc-name">Depresivo Leve en población adulta</div>
+                    <div class="gc-data">
+                        <div class="gc-mi"><i class="ti ti-chart-bar"></i>Indicadores en preparación</div>
+                    </div>
+                </div>
+                <div class="gc-foot">
+                    <div class="gc-meta">
+                        <div class="gc-mi"><i class="ti ti-clock"></i>Próximamente</div>
+                    </div>
+                    <button class="btn-v btn-dis" type="button" disabled>
+                        <i class="ti ti-clock"></i>Próximamente
                     </button>
                 </div>
             </div>
@@ -1673,7 +1716,7 @@
                             <div class="ind-foot">
                                 <div class="ind-meta-wrap">
                                     <span class="ind-meta-lbl">Meta:</span>
-                                    <span class="ind-meta-val">= 20</span>
+                                    <span class="ind-meta-val">≤20</span>
                                 </div>
                                 <div class="sem-wrap">
                                     <span class="sem-dot sem-low"></span>
@@ -1729,6 +1772,10 @@
                                 infecciosa que recibieron prescripción de dimenhidrinato.
                             </div>
                             <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">0%</span>
+                                </div>
                                 <div class="sem-wrap">
                                     <span class="sem-dot sem-low"></span>
                                     <span class="sem-lbl sem-lbl-low">No cumple meta</span>
@@ -1757,7 +1804,7 @@
                             <div class="ind-foot">
                                 <div class="ind-meta-wrap">
                                     <span class="ind-meta-lbl">Meta:</span>
-                                    <span class="ind-meta-val">—</span>
+                                    <span class="ind-meta-val">≥80%</span>
                                 </div>
                                 <div class="sem-wrap">
                                     <span class="sem-dot sem-low"></span>

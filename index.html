@@ -1399,7 +1399,7 @@
 
             <div class="gc"
                 data-txt="neumonía adquirida comunidad población pediátrica pediatría infectología nac neumonia respiratoria pulmon"
-                data-esp="Pediatría">
+                data-esp="Pediatría" data-estado="disponible">
                 <div class="gc-accent" style="background:#0077C8"></div>
                 <div class="gc-body">
                     <div class="gc-top">
@@ -1426,7 +1426,7 @@
 
             <div class="gc"
                 data-txt="diarrea aguda población pediátrica pediatría gastroenterología gastrointestinal niños"
-                data-esp="Pediatría">
+                data-esp="Pediatría" data-estado="disponible">
                 <div class="gc-accent" style="background:#0077C8"></div>
                 <div class="gc-body">
                     <div class="gc-top">
@@ -1460,7 +1460,8 @@
                 </div>
             </div>
 
-            <div class="gc" data-txt="depresión leve salud mental psiquiatría psicología" data-esp="Salud mental">
+            <div class="gc" data-txt="depresión leve salud mental psiquiatría psicología" data-esp="Salud mental"
+                data-estado="proximamente">
                 <div class="gc-accent" style="background:#C62828"></div>
                 <div class="gc-body">
                     <div class="gc-top">
@@ -1470,7 +1471,7 @@
                     <div class="gc-tags">
                         <span class="gc-badge b-dep">Salud mental</span>
                     </div>
-                    <div class="gc-name">Depresivo Leve en población adulta</div>
+                    <div class="gc-name">Episodio depresivo Leve en población adulta</div>
                     <div class="gc-data">
                         <div class="gc-mi"><i class="ti ti-chart-bar"></i>Indicadores en preparación</div>
                     </div>
@@ -1899,6 +1900,7 @@
             const esp = document.getElementById('obs-esp').value;
             const cards = document.querySelectorAll('.gc');
             let vis = 0;
+            let disponibles = 0;
 
             cards.forEach(function (c) {
                 const txt = (c.dataset.txt || '').toLowerCase();
@@ -1909,13 +1911,15 @@
                 if (mq && me) {
                     c.style.display = '';
                     vis++;
+                    if (c.dataset.estado === 'disponible') disponibles++;
                 } else {
                     c.style.display = 'none';
                 }
             });
 
             document.getElementById('slbl').textContent =
-                'Guías con resultados disponibles · ' + vis + (vis === 1 ? ' guía' : ' guías');
+                'Guías con resultados disponibles · ' + disponibles +
+                (disponibles === 1 ? ' guía' : ' guías');
 
             document.getElementById('empty').style.display = vis === 0 ? '' : 'none';
             document.getElementById('ggrid').style.display = vis === 0 ? 'none' : '';

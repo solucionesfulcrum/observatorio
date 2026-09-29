@@ -1352,7 +1352,7 @@
                             <line x1="25" y1="40" x2="43" y2="40"></line>
                         </svg>
                         <div class="kpi-divider"></div>
-                        <strong>2</strong>
+                        <strong>3</strong>
                     </div>
                     <span>GPC con resultados<br>disponibles</span>
                 </div>
@@ -1365,7 +1365,7 @@
                             <rect x="42" y="38" width="8" height="14"></rect>
                         </svg>
                         <div class="kpi-divider"></div>
-                        <strong>7</strong>
+                        <strong>8</strong>
                     </div>
                     <span>indicadores<br>medidos</span>
                 </div>
@@ -1461,27 +1461,28 @@
             </div>
 
             <div class="gc" data-txt="depresión leve salud mental psiquiatría psicología" data-esp="Salud mental"
-                data-estado="proximamente">
-                <div class="gc-accent" style="background:#C62828"></div>
+                data-estado="disponible">
+                <div class="gc-accent" style="background:#0077C8"></div>
                 <div class="gc-body">
                     <div class="gc-top">
-                        <div class="gc-icon ic-dep"><i class="ti ti-brain"></i></div>
-                        <span class="gc-state s-prox-red"><i class="ti ti-clock"></i>Próximamente</span>
+                        <div class="gc-icon ic-ped"><i class="ti ti-brain"></i></div>
+                        <span class="gc-state s-disp"><i class="ti ti-circle-check"></i>Disponible</span>
                     </div>
                     <div class="gc-tags">
-                        <span class="gc-badge b-dep">Salud mental</span>
+                        <span class="gc-badge b-ped">Salud mental</span>
                     </div>
-                    <div class="gc-name">Episodio depresivo Leve en población adulta</div>
+                    <div class="gc-name">Tamizaje y el manejo del episodio depresivo leve en el primer nivel de atención</div>
                     <div class="gc-data">
-                        <div class="gc-mi"><i class="ti ti-chart-bar"></i>Indicadores en preparación</div>
+                        <div class="gc-mi"><i class="ti ti-chart-bar"></i>1 indicador medido</div>
+                        <div class="gc-mi"><i class="ti ti-check"></i>3 aprobados</div>
                     </div>
                 </div>
                 <div class="gc-foot">
                     <div class="gc-meta">
-                        <div class="gc-mi"><i class="ti ti-clock"></i>Próximamente</div>
+                        <div class="gc-mi"><i class="ti ti-clock"></i>Ene 2026 – Jun 2026</div>
                     </div>
-                    <button class="btn-v btn-dis" type="button" disabled>
-                        <i class="ti ti-clock"></i>Próximamente
+                    <button class="btn-v" type="button" onclick="abrirModalDesdeBoton(event, 'modal-depresion')">
+                        <i class="ti ti-arrow-right"></i>Ver indicadores
                     </button>
                 </div>
             </div>
@@ -1690,8 +1691,7 @@
 
             <div class="modal-meta">
                 <div class="modal-mi"><i class="ti ti-file-certificate"></i>Res. N° 000309-IETSI-ESSALUD-2025</div>
-                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Indicadores: Res. N°
-                    000337-IETSI-ESSALUD-2025</div>
+                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Indicadores: Res. N° 000337-IETSI-ESSALUD-2025</div>
                 <div class="modal-mi"><i class="ti ti-chart-bar"></i>4 de 4 indicadores medidos</div>
                 <div class="modal-mi"><i class="ti ti-clock"></i>Ene 2026 – Jun 2026</div>
             </div>
@@ -1826,6 +1826,118 @@
                 <div class="ley-item"><span class="ley-dot" style="background:#E24B4A"></span>No cumple meta</div>
                 <div class="ley-item"><span class="ley-dot" style="background:#D0D8E4"></span>No medido</div>
             </div>
+
+        </div>
+    </div>
+
+    <!-- Depresión: estructura de diarrea con un solo indicador. -->
+    <div class="modal-overlay" id="modal-depresion" onclick="cerrarModalOverlay(event, 'modal-depresion')">
+        <div class="modal">
+
+            <div class="modal-hdr">
+                <div class="modal-hdr-left">
+                    <span class="modal-badge">Salud mental</span>
+                    <div class="modal-title">Tamizaje y el manejo del episodio depresivo leve en el primer nivel de atención</div>
+                </div>
+                <div class="modal-hdr-right">
+                    <button class="btn-ficha"
+                        onclick="event.stopPropagation(); window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2025/09/RESOLUCION-000273-2025-IETSI-Indicadores-de-la-GPC-Depresion-Leve.pdf','_blank')">
+                        <i class="ti ti-file-download"></i>Fichas técnicas
+                    </button>
+                    <button class="btn-close" onclick="cerrarModal('modal-depresion')">
+                        <i class="ti ti-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-meta">
+                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Res. N° 000112-IETSI-ESSALUD-2019</div>
+                <div class="modal-mi"><i class="ti ti-file-certificate"></i>Indicadores: Res. N° 000273-IETSI-ESSALUD-2025</div>
+                <div class="modal-mi"><i class="ti ti-chart-bar"></i>1 de 3 indicadores medidos</div>
+                <div class="modal-mi"><i class="ti ti-clock"></i>Ene 2026 – Jun 2026</div>
+            </div>
+            <div class="modal-body">
+                <div class="ind-acc">
+
+                    <!-- IND-01 (copiado) -->
+                    <div class="ind-item" id="ind-dep-01">
+                        <div class="ind-item-hdr" onclick="toggleInd('ind-dep-01')">
+                            <span class="ind-code">IND-01</span>
+                            <span class="ind-short">Episodio depresivo en grupos prioritarios.</span>
+                            <i class="ti ti-chevron-down ind-chevron"></i>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">Porcentaje de pacientes de grupos prioritarios con tamizaje de episodio depresivo.</div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">≥80%</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-low"></span>
+                                    <span class="sem-lbl sem-lbl-low">No cumple meta</span>
+                                </div>
+                                <button class="btn-tb"
+                                    onclick="abrirTableroNuevaPestana(event, 'https://app.powerbi.com/view?r=eyJrIjoiY2IzYzIyYmItM2ZjYy00NTI3LWEwMzAtYzYwM2NiN2RhY2M2IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', 'IND-01 · Depresión · Indicador 1')">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- IND-02 -->
+                    <div class="ind-item ind-item-dis" id="ind-dep-02">
+                        <div class="ind-item-hdr" aria-disabled="true">
+                            <span class="ind-code">IND-02</span>
+                            <span class="ind-short">Episodio depresivo moderado o severo referidos a psiquiatría</span>
+                            <i class="ti ti-chevron-down ind-chevron"></i>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">Porcentaje de pacientes de grupos prioritarios con tamizaje de episodio depresivo.</div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">≥80%</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-low"></span>
+                                    <span class="sem-lbl sem-lbl-low">No cumple meta</span>
+                                </div>
+                                <button class="btn-tb"
+                                    onclick="abrirTableroNuevaPestana(event, 'https://app.powerbi.com/view?r=eyJrIjoiY2IzYzIyYmItM2ZjYy00NTI3LWEwMzAtYzYwM2NiN2RhY2M2IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', 'IND-01 · Depresión · Indicador 1')">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- IND-03 -->
+                    <div class="ind-item ind-item-dis" id="ind-dep-03">
+                        <div class="ind-item-hdr" aria-disabled="true">
+                            <span class="ind-code">IND-03</span>
+                            <span class="ind-short">Episodio depresivo leve que iniciaron psicoterapia que completaron al menos 8 sesiones.</span>
+                            <i class="ti ti-chevron-down ind-chevron"></i>
+                        </div>
+                        <div class="ind-item-body">
+                            <div class="ind-nombre-completo">Porcentaje de adultos con episodio depresivo leve que iniciaron psicoterapia que completaron al menos 8 sesiones.</div>
+                            <div class="ind-foot">
+                                <div class="ind-meta-wrap">
+                                    <span class="ind-meta-lbl">Meta:</span>
+                                    <span class="ind-meta-val">≥80%</span>
+                                </div>
+                                <div class="sem-wrap">
+                                    <span class="sem-dot sem-low"></span>
+                                    <span class="sem-lbl sem-lbl-low">No cumple meta</span>
+                                </div>
+                                <button class="btn-tb"
+                                    onclick="abrirTableroNuevaPestana(event, 'https://app.powerbi.com/view?r=eyJrIjoiY2IzYzIyYmItM2ZjYy00NTI3LWEwMzAtYzYwM2NiN2RhY2M2IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', 'IND-03 · Depresión · Indicador 3')">
+                                    <i class="ti ti-external-link"></i>Ver tablero
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
 
         </div>
     </div>

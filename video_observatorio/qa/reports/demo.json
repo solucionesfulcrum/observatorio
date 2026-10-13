@@ -1,0 +1,58 @@
+{
+  "duration_seconds": 58.359,
+  "video_duration_seconds": 58.375,
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 24,
+  "render_seconds": 8.63852858543396,
+  "synthesis_seconds": 5.148945569992065,
+  "size_bytes": 1781864,
+  "scenes": [
+    {
+      "scene": "PRESENTADOR",
+      "start": 0,
+      "end": 9.07265306122449
+    },
+    {
+      "scene": "CAPTURA DEL OBSERVATORIO",
+      "start": 9.07265306122449,
+      "end": 25.580952380952382
+    },
+    {
+      "scene": "PRESENTADOR + INTERFAZ",
+      "start": 25.580952380952382,
+      "end": 30.241814058956916
+    },
+    {
+      "scene": "GPC DISPONIBLES",
+      "start": 30.241814058956916,
+      "end": 45.84979591836735
+    },
+    {
+      "scene": "INDICADORES",
+      "start": 45.84979591836735,
+      "end": 56.84444444444444
+    },
+    {
+      "scene": "CIERRE",
+      "start": 56.84444444444444,
+      "end": 58.375
+    }
+  ],
+  "voice": "es_MX-claude-high",
+  "presenter": "Imagen estática proporcionada: assets/presenter/presentadora.png; sin deformación facial",
+  "audio_reused_without_reencoding": true,
+  "music": false,
+  "paid_services": false,
+  "external_inference": false,
+  "full_decode_passed": true,
+  "loudness_lufs": -16.05,
+  "true_peak_dbtp": -1.21,
+  "elapsed_total_seconds": 84.46026992797852,
+  "sha256": "dc176e39994aaf4b3759a8edb8a26e7530c713990cbd667f2c5316a44aa0b0b8",
+  "quality_scope": "Demo con presentadora estática; sin animación facial ni estado verified de la skill",
+  "storage_runtime": "C:\\Users\\SOPORTE\\AppData\\Local\\ObservatorioVideo",
+  "output": "outputs/observatorio_demo.mp4"
+}

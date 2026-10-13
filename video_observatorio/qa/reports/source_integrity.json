@@ -1,0 +1,25 @@
+{
+  "narration_words": 129,
+  "source_files": {
+    "essalud.webp": {
+      "sha256": "6af2df4319ce99a126b72170f5007dbecc28a4a55bccc4025e97360ce135d093",
+      "identical_to_original": true
+    },
+    "IETSI.webp": {
+      "sha256": "88770547f1b501b0fc8f7c567b2a1e1f30890b01981edf0ff1aaba52cbeb07f0",
+      "identical_to_original": true
+    },
+    "index.html": {
+      "sha256": "40b2cc9cb38a27525777a87b4efd653765b17f5a85f856fc5f286395bcad2688",
+      "identical_to_original": true
+    },
+    "styles.css": {
+      "sha256": "e0289a3b062db186a421fb3da325aee73fb641f6f151349ef2976d5fe1648341",
+      "identical_to_original": true
+    },
+    "tablero.html": {
+      "sha256": "34a41feeefead5de72471605f036ea5f941cf9de061cce6bd54fba1d7c549472",
+      "identical_to_original": true
+    }
+  }
+}

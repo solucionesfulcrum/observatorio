@@ -1,0 +1,17 @@
+{
+  "preserved_files": {
+    "docs/SCRIPT.md": true,
+    "docs/LOCUCION.txt": true,
+    "assets/audio/final/narracion_demo.wav": true,
+    "assets/presenter/presentadora.png": true,
+    "assets/screenshots/guias.png": true,
+    "assets/screenshots/guia_1.png": true,
+    "assets/screenshots/guia_2.png": true,
+    "assets/screenshots/guia_3.png": true,
+    "assets/screenshots/indicadores.png": true,
+    "assets/screenshots/indicador_abierto.png": true,
+    "assets/screenshots/inicio.png": true,
+    "assets/screenshots/modal.png": true
+  },
+  "aac_bitstream_identical": true
+}

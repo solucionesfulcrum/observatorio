@@ -1,0 +1,17 @@
+{
+  "start_time": 1790803213.6823502,
+  "files": {
+    "docs/SCRIPT.md": "29847dd88f45ae25a53b5a03b525a8d1f5b3d4c8b8f70894f87db6223384318f",
+    "docs/LOCUCION.txt": "c34e55217cf4b8d953a9e3141616b8f48de94f72f7f26b306bede18b48babd93",
+    "assets/audio/final/narracion_demo.wav": "764e1989a0cc473d99bb797815d8469e49b890c20e3113fc0226369fc6f0f908",
+    "assets/presenter/presentadora.png": "ab9b462ca9b2921238fa2d545b4eaa7cbb2b24fc50d13c871478adebb735908c",
+    "assets/screenshots/guias.png": "1e1cf2f3b91b5113f6a2f25a04cccc19d987ffc257544b1bc5861de545c6e337",
+    "assets/screenshots/guia_1.png": "8d2aa4fb33749a8896ee1f816d5452c67ccd3f076238c883b4de37fdd77ea77d",
+    "assets/screenshots/guia_2.png": "ed4405950d7fc5e05f8b4e5097877a53db3d655c779c56dd1f8a828a03bf0859",
+    "assets/screenshots/guia_3.png": "e91b482c818416282d76a4b5e9204b39c635f40a26587b3922e16592cb67e11c",
+    "assets/screenshots/indicadores.png": "07c3e1be2a92c50ffe659cd33ddf49cba7c4cf40544d84aefbcfa8cb9a6d2052",
+    "assets/screenshots/indicador_abierto.png": "493735c6e604ef9981961341f4970219c7e315e1157e525d6bcb2e7780724427",
+    "assets/screenshots/inicio.png": "d06d01e39b3f9032e516e943534108386da9ba0abea3e32c35f2c845f695cef9",
+    "assets/screenshots/modal.png": "63541f3a26b1e3b3762c2158f86677fae41db67ea5bc5f96fbaddb3ca2d9440b"
+  }
+}

@@ -1,0 +1,728 @@
+{
+  "model": "faster-whisper base int8 CPU",
+  "elapsed_seconds": 9.14452838897705,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.82,
+      "text": " Bienvenidos al Observatorio de Aderencia a Guilas de Práctica Clínica",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.6,
+          "text": " Bienvenidos"
+        },
+        {
+          "start": 0.6,
+          "end": 0.9,
+          "text": " al"
+        },
+        {
+          "start": 0.9,
+          "end": 1.56,
+          "text": " Observatorio"
+        },
+        {
+          "start": 1.56,
+          "end": 1.82,
+          "text": " de"
+        },
+        {
+          "start": 1.82,
+          "end": 2.3,
+          "text": " Aderencia"
+        },
+        {
+          "start": 2.3,
+          "end": 2.52,
+          "text": " a"
+        },
+        {
+          "start": 2.52,
+          "end": 2.7,
+          "text": " Guilas"
+        },
+        {
+          "start": 2.7,
+          "end": 2.88,
+          "text": " de"
+        },
+        {
+          "start": 2.88,
+          "end": 3.26,
+          "text": " Práctica"
+        },
+        {
+          "start": 3.26,
+          "end": 3.82,
+          "text": " Clínica"
+        }
+      ]
+    },
+    {
+      "start": 3.82,
+      "end": 8.48,
+      "text": " del Instituto de Evaluación de Tecnologías en Salud Investigación y ETSI.",
+      "words": [
+        {
+          "start": 3.82,
+          "end": 4.1,
+          "text": " del"
+        },
+        {
+          "start": 4.1,
+          "end": 4.6,
+          "text": " Instituto"
+        },
+        {
+          "start": 4.6,
+          "end": 4.8,
+          "text": " de"
+        },
+        {
+          "start": 4.8,
+          "end": 5.34,
+          "text": " Evaluación"
+        },
+        {
+          "start": 5.34,
+          "end": 5.58,
+          "text": " de"
+        },
+        {
+          "start": 5.58,
+          "end": 6.2,
+          "text": " Tecnologías"
+        },
+        {
+          "start": 6.2,
+          "end": 6.5,
+          "text": " en"
+        },
+        {
+          "start": 6.5,
+          "end": 6.86,
+          "text": " Salud"
+        },
+        {
+          "start": 6.86,
+          "end": 7.78,
+          "text": " Investigación"
+        },
+        {
+          "start": 7.78,
+          "end": 8.16,
+          "text": " y"
+        },
+        {
+          "start": 8.16,
+          "end": 8.48,
+          "text": " ETSI."
+        }
+      ]
+    },
+    {
+      "start": 9.16,
+      "end": 13.28,
+      "text": " Aquí se presentan los resultados de la medición de indicadores de aderencia",
+      "words": [
+        {
+          "start": 9.16,
+          "end": 9.36,
+          "text": " Aquí"
+        },
+        {
+          "start": 9.36,
+          "end": 9.56,
+          "text": " se"
+        },
+        {
+          "start": 9.56,
+          "end": 10.08,
+          "text": " presentan"
+        },
+        {
+          "start": 10.08,
+          "end": 10.26,
+          "text": " los"
+        },
+        {
+          "start": 10.26,
+          "end": 10.82,
+          "text": " resultados"
+        },
+        {
+          "start": 10.82,
+          "end": 11.18,
+          "text": " de"
+        },
+        {
+          "start": 11.18,
+          "end": 11.28,
+          "text": " la"
+        },
+        {
+          "start": 11.28,
+          "end": 11.76,
+          "text": " medición"
+        },
+        {
+          "start": 11.76,
+          "end": 11.94,
+          "text": " de"
+        },
+        {
+          "start": 11.94,
+          "end": 12.5,
+          "text": " indicadores"
+        },
+        {
+          "start": 12.5,
+          "end": 12.76,
+          "text": " de"
+        },
+        {
+          "start": 12.76,
+          "end": 13.28,
+          "text": " aderencia"
+        }
+      ]
+    },
+    {
+      "start": 13.28,
+      "end": 18.3,
+      "text": " a recomendaciones trazadoras de las guías de práctica clínica aprobadas por el ETSI.",
+      "words": [
+        {
+          "start": 13.28,
+          "end": 13.42,
+          "text": " a"
+        },
+        {
+          "start": 13.42,
+          "end": 14.22,
+          "text": " recomendaciones"
+        },
+        {
+          "start": 14.22,
+          "end": 15.02,
+          "text": " trazadoras"
+        },
+        {
+          "start": 15.02,
+          "end": 15.14,
+          "text": " de"
+        },
+        {
+          "start": 15.14,
+          "end": 15.32,
+          "text": " las"
+        },
+        {
+          "start": 15.32,
+          "end": 15.62,
+          "text": " guías"
+        },
+        {
+          "start": 15.62,
+          "end": 15.76,
+          "text": " de"
+        },
+        {
+          "start": 15.76,
+          "end": 16.26,
+          "text": " práctica"
+        },
+        {
+          "start": 16.26,
+          "end": 16.78,
+          "text": " clínica"
+        },
+        {
+          "start": 16.78,
+          "end": 17.38,
+          "text": " aprobadas"
+        },
+        {
+          "start": 17.38,
+          "end": 17.66,
+          "text": " por"
+        },
+        {
+          "start": 17.66,
+          "end": 17.82,
+          "text": " el"
+        },
+        {
+          "start": 17.82,
+          "end": 18.3,
+          "text": " ETSI."
+        }
+      ]
+    },
+    {
+      "start": 18.98,
+      "end": 24.64,
+      "text": " Esta información permite realizar seguimiento y apoyar la mejora de la práctica clínica en ese",
+      "words": [
+        {
+          "start": 18.98,
+          "end": 19.24,
+          "text": " Esta"
+        },
+        {
+          "start": 19.24,
+          "end": 19.8,
+          "text": " información"
+        },
+        {
+          "start": 19.8,
+          "end": 20.38,
+          "text": " permite"
+        },
+        {
+          "start": 20.38,
+          "end": 20.88,
+          "text": " realizar"
+        },
+        {
+          "start": 20.88,
+          "end": 21.48,
+          "text": " seguimiento"
+        },
+        {
+          "start": 21.48,
+          "end": 21.78,
+          "text": " y"
+        },
+        {
+          "start": 21.78,
+          "end": 22.2,
+          "text": " apoyar"
+        },
+        {
+          "start": 22.2,
+          "end": 22.36,
+          "text": " la"
+        },
+        {
+          "start": 22.36,
+          "end": 22.8,
+          "text": " mejora"
+        },
+        {
+          "start": 22.8,
+          "end": 22.9,
+          "text": " de"
+        },
+        {
+          "start": 22.9,
+          "end": 23.02,
+          "text": " la"
+        },
+        {
+          "start": 23.02,
+          "end": 23.48,
+          "text": " práctica"
+        },
+        {
+          "start": 23.48,
+          "end": 24.1,
+          "text": " clínica"
+        },
+        {
+          "start": 24.1,
+          "end": 24.44,
+          "text": " en"
+        },
+        {
+          "start": 24.44,
+          "end": 24.64,
+          "text": " ese"
+        }
+      ]
+    },
+    {
+      "start": 24.64,
+      "end": 29.48,
+      "text": " salud. Actualmente, hay resultados disponibles para tres guías.",
+      "words": [
+        {
+          "start": 24.64,
+          "end": 25.04,
+          "text": " salud."
+        },
+        {
+          "start": 25.54,
+          "end": 26.42,
+          "text": " Actualmente,"
+        },
+        {
+          "start": 26.88,
+          "end": 27.0,
+          "text": " hay"
+        },
+        {
+          "start": 27.0,
+          "end": 27.48,
+          "text": " resultados"
+        },
+        {
+          "start": 27.48,
+          "end": 28.42,
+          "text": " disponibles"
+        },
+        {
+          "start": 28.42,
+          "end": 28.68,
+          "text": " para"
+        },
+        {
+          "start": 28.68,
+          "end": 29.04,
+          "text": " tres"
+        },
+        {
+          "start": 29.04,
+          "end": 29.48,
+          "text": " guías."
+        }
+      ]
+    },
+    {
+      "start": 30.28,
+      "end": 34.2,
+      "text": " Memonía, adquirida en la comunidad de em población pediátrica.",
+      "words": [
+        {
+          "start": 30.28,
+          "end": 30.86,
+          "text": " Memonía,"
+        },
+        {
+          "start": 31.4,
+          "end": 32.06,
+          "text": " adquirida"
+        },
+        {
+          "start": 32.06,
+          "end": 32.16,
+          "text": " en"
+        },
+        {
+          "start": 32.16,
+          "end": 32.26,
+          "text": " la"
+        },
+        {
+          "start": 32.26,
+          "end": 32.72,
+          "text": " comunidad"
+        },
+        {
+          "start": 32.72,
+          "end": 32.92,
+          "text": " de"
+        },
+        {
+          "start": 32.92,
+          "end": 33.0,
+          "text": " em"
+        },
+        {
+          "start": 33.0,
+          "end": 33.5,
+          "text": " población"
+        },
+        {
+          "start": 33.5,
+          "end": 34.2,
+          "text": " pediátrica."
+        }
+      ]
+    },
+    {
+      "start": 34.98,
+      "end": 39.0,
+      "text": " Diarreo gastroenteritis abuda infecciosa en menores de cinco años.",
+      "words": [
+        {
+          "start": 34.98,
+          "end": 35.4,
+          "text": " Diarreo"
+        },
+        {
+          "start": 35.4,
+          "end": 36.22,
+          "text": " gastroenteritis"
+        },
+        {
+          "start": 36.22,
+          "end": 36.66,
+          "text": " abuda"
+        },
+        {
+          "start": 36.66,
+          "end": 37.38,
+          "text": " infecciosa"
+        },
+        {
+          "start": 37.38,
+          "end": 37.52,
+          "text": " en"
+        },
+        {
+          "start": 37.52,
+          "end": 37.88,
+          "text": " menores"
+        },
+        {
+          "start": 37.88,
+          "end": 38.1,
+          "text": " de"
+        },
+        {
+          "start": 38.1,
+          "end": 38.46,
+          "text": " cinco"
+        },
+        {
+          "start": 38.46,
+          "end": 39.0,
+          "text": " años."
+        }
+      ]
+    },
+    {
+      "start": 39.68,
+      "end": 45.18,
+      "text": " Itamisaje y del manejo del episodio depresivo leve en el primer nivel de atención.",
+      "words": [
+        {
+          "start": 39.68,
+          "end": 40.56,
+          "text": " Itamisaje"
+        },
+        {
+          "start": 40.56,
+          "end": 40.9,
+          "text": " y"
+        },
+        {
+          "start": 40.9,
+          "end": 41.02,
+          "text": " del"
+        },
+        {
+          "start": 41.02,
+          "end": 41.48,
+          "text": " manejo"
+        },
+        {
+          "start": 41.48,
+          "end": 41.68,
+          "text": " del"
+        },
+        {
+          "start": 41.68,
+          "end": 42.18,
+          "text": " episodio"
+        },
+        {
+          "start": 42.18,
+          "end": 42.74,
+          "text": " depresivo"
+        },
+        {
+          "start": 42.74,
+          "end": 43.08,
+          "text": " leve"
+        },
+        {
+          "start": 43.08,
+          "end": 43.74,
+          "text": " en"
+        },
+        {
+          "start": 43.74,
+          "end": 43.86,
+          "text": " el"
+        },
+        {
+          "start": 43.86,
+          "end": 44.12,
+          "text": " primer"
+        },
+        {
+          "start": 44.12,
+          "end": 44.46,
+          "text": " nivel"
+        },
+        {
+          "start": 44.46,
+          "end": 44.68,
+          "text": " de"
+        },
+        {
+          "start": 44.68,
+          "end": 45.18,
+          "text": " atención."
+        }
+      ]
+    },
+    {
+      "start": 45.82,
+      "end": 51.18,
+      "text": " Para consultar los resultados, ingrese a la guía de su interés mediante ver indicadores.",
+      "words": [
+        {
+          "start": 45.82,
+          "end": 46.06,
+          "text": " Para"
+        },
+        {
+          "start": 46.06,
+          "end": 46.6,
+          "text": " consultar"
+        },
+        {
+          "start": 46.6,
+          "end": 46.82,
+          "text": " los"
+        },
+        {
+          "start": 46.82,
+          "end": 47.52,
+          "text": " resultados,"
+        },
+        {
+          "start": 48.04,
+          "end": 48.36,
+          "text": " ingrese"
+        },
+        {
+          "start": 48.36,
+          "end": 48.6,
+          "text": " a"
+        },
+        {
+          "start": 48.6,
+          "end": 48.7,
+          "text": " la"
+        },
+        {
+          "start": 48.7,
+          "end": 48.96,
+          "text": " guía"
+        },
+        {
+          "start": 48.96,
+          "end": 49.12,
+          "text": " de"
+        },
+        {
+          "start": 49.12,
+          "end": 49.26,
+          "text": " su"
+        },
+        {
+          "start": 49.26,
+          "end": 49.7,
+          "text": " interés"
+        },
+        {
+          "start": 49.7,
+          "end": 50.22,
+          "text": " mediante"
+        },
+        {
+          "start": 50.22,
+          "end": 50.5,
+          "text": " ver"
+        },
+        {
+          "start": 50.5,
+          "end": 51.18,
+          "text": " indicadores."
+        }
+      ]
+    },
+    {
+      "start": 51.18,
+      "end": 56.46,
+      "text": " Desplidegue un indicador y seleccione ver tablero para acceder a su tablero de resultados.",
+      "words": [
+        {
+          "start": 51.18,
+          "end": 52.1,
+          "text": " Desplidegue"
+        },
+        {
+          "start": 52.1,
+          "end": 52.28,
+          "text": " un"
+        },
+        {
+          "start": 52.28,
+          "end": 52.84,
+          "text": " indicador"
+        },
+        {
+          "start": 52.84,
+          "end": 53.08,
+          "text": " y"
+        },
+        {
+          "start": 53.08,
+          "end": 53.66,
+          "text": " seleccione"
+        },
+        {
+          "start": 53.66,
+          "end": 53.9,
+          "text": " ver"
+        },
+        {
+          "start": 53.9,
+          "end": 54.38,
+          "text": " tablero"
+        },
+        {
+          "start": 54.38,
+          "end": 54.6,
+          "text": " para"
+        },
+        {
+          "start": 54.6,
+          "end": 55.08,
+          "text": " acceder"
+        },
+        {
+          "start": 55.08,
+          "end": 55.2,
+          "text": " a"
+        },
+        {
+          "start": 55.2,
+          "end": 55.32,
+          "text": " su"
+        },
+        {
+          "start": 55.32,
+          "end": 55.8,
+          "text": " tablero"
+        },
+        {
+          "start": 55.8,
+          "end": 55.9,
+          "text": " de"
+        },
+        {
+          "start": 55.9,
+          "end": 56.46,
+          "text": " resultados."
+        }
+      ]
+    }
+  ]
+}
